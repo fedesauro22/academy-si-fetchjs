@@ -10,13 +10,12 @@ async function getUser(){
         const response = await fetch(`http://127.0.0.1:8080/api/utente/trova?email=${email}`);
         var temp = "";
         if (!response.ok) {
-            temp= "<p class='error'>404: Utente non trovato</p>"
+            temp= "<div class='alert alert-danger' role='alert'>Utente non trovato. Verifica l'email inserita.</div>";
             document.getElementById("tabella-utente").innerHTML = temp;
             throw new Error(`HTTP error! status: ${response.status}`);
         }
 
         const data = await response.json();
-        console.log(data);
         temp = "<tr><th>Nome</th><th>Cognome</th><th>Email</th><th>Ruoli</th></tr>";
 
         temp+="<tr>";

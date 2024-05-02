@@ -26,7 +26,6 @@ async function update(){
     const nome = document.getElementById("nome").value;
     const cognome = document.getElementById("cognome").value;
     const ruolo = document.getElementById("ruolo").value;
-    console.log(ruolo);
     try{
         const response = await fetch(`http://127.0.0.1:8080/api/utente/aggiorna`, {
             method: 'PUT',
